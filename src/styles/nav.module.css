@@ -1,5 +1,4 @@
 .nav{
-    padding : 5px;
     height : 70px;
     width : 100vw;
     background-color: white;
@@ -8,9 +7,32 @@
 .container{
     width : 80%;
     height : 100%;
+    margin : 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid red;
+
+}
+
+.nav_brand{
+    width : fit-content;
+    display : flex;
+    align-items: center;
+    justify-content: left;
+    font-weight: 600;
+    transition: all .15s;
+    cursor: pointer;
+    color : #706F6F;
+}
+
+.nav_brand:hover{
+    color : red;
+}
+
+.nav_logo{
+    font-size: 50px;
+    margin-right: 5px;
 }
 
 .nav_menu{
@@ -26,12 +48,12 @@
 
 .nav_link{
     text-decoration: none;
-    color : #706F6F;
+    color : inherit;
     transition: all .15s;
     font-weight:600
 }
 
 .nav_link:hover{
-    color : #52489C;
+    color : red;
     font-weight: 620;
 }
