@@ -1,7 +1,14 @@
+import React from "react"
+import { HashRouter, Routes, Route } from "react-router-dom"
+import Nav from "./components/Nav"
 
 const App = () => {
   return (
-    <div>App</div>
+    
+    <HashRouter>
+      <Nav />
+    </HashRouter>
+
   )
 }
 

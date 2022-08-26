@@ -1,0 +1,37 @@
+.nav{
+    padding : 5px;
+    height : 70px;
+    width : 100vw;
+    background-color: white;
+}
+
+.container{
+    width : 80%;
+    height : 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav_menu{
+    width : 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav_item{
+    list-style: none;
+}
+
+.nav_link{
+    text-decoration: none;
+    color : #706F6F;
+    transition: all .15s;
+    font-weight:600
+}
+
+.nav_link:hover{
+    color : #52489C;
+    font-weight: 620;
+}
