@@ -1,7 +1,7 @@
 .nav{
     height : 70px;
     width : 100vw;
-    background-color: white;
+    background-color: #FF4B3E;
 }
 
 .container{
@@ -11,7 +11,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid red;
 
 }
 
@@ -23,16 +22,15 @@
     font-weight: 600;
     transition: all .15s;
     cursor: pointer;
-    color : #706F6F;
+    color : white;
 }
 
-.nav_brand:hover{
-    color : red;
-}
+
 
 .nav_logo{
     font-size: 50px;
     margin-right: 5px;
+ 
 }
 
 .nav_menu{
@@ -48,12 +46,8 @@
 
 .nav_link{
     text-decoration: none;
-    color : inherit;
+    color : white;
     transition: all .15s;
     font-weight:600
 }
 
-.nav_link:hover{
-    color : red;
-    font-weight: 620;
-}
