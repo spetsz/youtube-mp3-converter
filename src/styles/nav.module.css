@@ -9,7 +9,7 @@
     height : 100%;
     margin : 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 
 }
@@ -33,32 +33,10 @@
  
 }
 
-.nav_menu{
-    width : 10%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.nav_item{
-    list-style: none;
-}
-
 .nav_link{
     text-decoration: none;
     color : white;
     transition: all .15s;
     font-weight:600
-}
-
-
-@media only screen and (max-width : 480px) {
-    .nav_menu{
-        display : none;
-    }
-    .container{
-        justify-content: center;
-    }
-    
 }
 
