@@ -1,6 +1,9 @@
 .main{
     width : 100vw;
-    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 
@@ -20,9 +23,9 @@
 
 .form{
     display: flex;
-    width : 70%;
+    width :90%;
     margin: 0 auto;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -31,27 +34,47 @@
     font-weight: 600;
     font-size: 20px;
     width : 50%;
+    display: flex;
+    align-items: center;
 }
 
 .form_input{
     height : 50px;
     border : 1px solid white;
     border-radius: 5px;
-    padding : 2px;
+    padding : 5px;
     width : 100%;
     font-weight: 600;
     font-size: 20px;
     outline: none;
-    color : #FF4B3E
+    color : white;
+    text-align: center;
+    margin : 15px 0;
+
 }
 
+.form_input_success{
+    height : 50px;
+    border : 1px solid white;
+    border-radius: 5px;
+    padding : 5px;
+    width : 100%;
+    font-weight: 600;
+    font-size: 20px;
+    outline: none;
+    color : #0ae754;
+    text-align: center;
+    margin : 15px 0;
+
+
+}
 
 .btn{
     font-weight: 600;
     font-size: 20px;
     outline: none;
     height : 50px;
-    width : 70%;
+    width : 90%;
     border : none;
     cursor: pointer;
     color : #FF4B3E;
@@ -67,7 +90,7 @@
 }
 
 .info{
-    width : 70%
+    width : 90%
 }
 
 .group{
@@ -77,3 +100,38 @@
     align-items: center;
     margin-top: 5px;
 }
+
+@media only screen and (max-width : 480px) {
+
+    .text{
+        font-weight: 300;
+        font-size: 12px;
+    }
+
+    .form_input{
+        height : 25px;
+        padding : 2px;
+        width : 50%;
+        font-weight: 300;
+        font-size: 12px;
+        margin : 15px 0;
+    }
+
+    .form_input_success{
+        height : 25px;
+        padding : 2px;
+        width : 50%;
+        font-weight: 300;
+        font-size: 12px;
+        margin : 15px 0;
+    }
+
+    .btn{
+        font-weight: 300;
+        font-size: 12px; 
+        height : 25px;
+        width : 90%;
+    }
+    
+}
+

@@ -1,9 +1,11 @@
 import React, {useState} from 'react'
 import axios from 'axios'
-
+import {AiOutlineVideoCamera} from 'react-icons/ai'
+import {MdOutlineTimelapse} from 'react-icons/md'
 import styles from '../styles/main.module.css'
 
-const {main, container, form, text, form_input, btn, info, group} = styles
+
+const {main, container, form, text, form_input, btn, info, group, form_input_success} = styles
 
 const Main = () => {
     
@@ -25,7 +27,7 @@ const Main = () => {
                 status : data.status
             })
 
-            data.status === "processing" ? load () : window.open(data.link, '_self')
+            data.status === "processing" ? setTimeout(()=>{load(options)}, 5000) : window.open(data.link, '_self')
 
     }
 
@@ -37,12 +39,8 @@ const Main = () => {
         }else if(link.includes('https://www.youtube.com/watch?v=')){
             params = link.split("watch?v=")[1]
         }else if(link.includes('https://www.youtube.com/playlist?list=')){
-            const res = await axios(link)
-            const html = await res.text()
-            console.log(html)
            
-           // thumbs = document.querySelectorAll('a#thumbnail.yt-simple-endpoint.inline-block.style-scope.ytd-thumbnail')
-           // thumbs[1].href.split('v=')[1].split("&list")[0]
+           console.log('Download playlist')
 
         }else{
             window.alert('Invalid link!')
@@ -58,8 +56,6 @@ const Main = () => {
             }
         }
 
-        
-
            await load(options)
             
             
@@ -72,33 +68,45 @@ const Main = () => {
     <main className={main}>
         <div className={container}>
           
-                <form className={form}>
+                {
+                    status !== "ok" && status !== "fail" ? 
+                    <>
+                    
+                        <form className={form}>
 
-                    <h2 className={text}>Link you want to convert :</h2>
-                    <input value={link} onChange={(e)=>setLink(e.target.value)} type="text" className={form_input} />
+                            <h2 className={text}>Link you want to convert</h2>
+                            <input value={link} onChange={(e)=>setLink(e.target.value)} type="text" className={form_input} style={{color : "red"}} />
 
-                </form>
-                <button type="button" onClick={convert} className={btn}>Convert</button>
+                        </form>  
+
+                        <button type="button" onClick={convert} className={btn}>Convert</button>
+                    </>    
+
+                :   <button type="button" onClick={()=>{setResData(""); setLink("")}} className={btn}>Convert another one</button>
+  
+
+                }
+
                 
                 { resData &&
                 
                 <div className={info}>
 
                     <div className={group}>
-                        <h2 className={text}>Title :</h2>
+                        <h2 className={text}><AiOutlineVideoCamera /> Title</h2>
                         <input disabled value={title} type="text" className={form_input} />
                     </div>
                     
                     <div className={group}>
-                        <h2 className={text}>Duration :</h2>
-                        <input disabled value={duration} type="text" className={form_input} />
+                        <h2 className={text}><MdOutlineTimelapse /> Duration</h2>
+                        <input disabled value={(duration / 60).toFixed(2)} type="text" className={form_input} />
                     </div>
                     
                 
                     <div className={group}>
                         
-                        <h2 className={text}>Status :</h2>
-                        <input disabled value={status} type="text" className={form_input} />
+                        <h2 className={text}>Status </h2>
+                        <input disabled value={status} type="text" className={status === "ok" ? form_input_success : form_input} />
 
                     </div>
 
